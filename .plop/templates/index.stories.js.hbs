@@ -1,0 +1,15 @@
+import {{ pascalCase component }} from './index.vue';
+
+export default {
+  title: '{{ title }}',
+  component: {{ pascalCase component }},
+};
+
+const Template = (args, { argTypes }) => ({
+  components: { MyComponent: {{ pascalCase component }} },
+  props: Object.keys(argTypes),
+  template: `<my-component v-bind="$props"></my-component>`,
+});
+
+export const Default = Template.bind({});
+Default.args = {};

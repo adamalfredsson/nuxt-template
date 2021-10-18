@@ -1,0 +1,20 @@
+import { shallowMount } from '@vue/test-utils';
+import {{ pascalCase component }} from './index.vue';
+
+describe('{{ pascalCase component }}', () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallowMount({{ pascalCase component }}, {
+      propsData: {},
+    });
+  });
+
+  afterEach(() => {
+    wrapper.destroy();
+  });
+
+  it('mounts', () => {
+    expect(wrapper).toBeDefined();
+  });
+});

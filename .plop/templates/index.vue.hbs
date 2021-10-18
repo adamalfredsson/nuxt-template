@@ -1,0 +1,23 @@
+<template lang="pug">
+.{{ prefix }}{{ kebabCase component }}(:class='classes')
+</template>
+
+<script>
+export default {
+  name: '{{ prefix }}{{ kebabCase component }}',
+  props: {},
+  data() {
+    return {};
+  },
+  computed: {
+    classes() {
+      return [];
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.{{ prefix }}{{ kebabCase component }} {
+}
+</style>
