@@ -1,46 +1,32 @@
 <template lang="pug">
-section.z-block.py-16(:class="classes")
+section.z-block.py-16.bg-cover(:class="classes", :style="styles")
   slot
 </template>
 
 <script>
 import { defineComponent, computed } from "@nuxtjs/composition-api";
-import { isBackground } from "~/utils/validation/background";
 
 export default defineComponent({
   name: "z-block",
   props: {
     background: {
-      type: Object,
-      required: false,
-      default: () => ({}),
-      validator: isBackground,
+      type: String,
+      required: false
     },
   },
-  setup(props) {
-    const imageClasses = computed(() => {
-      const { image } = props.background
-      if (!image) return [];
-      return [
-        {
-          parallax: image.parallax,
-          cover: image.cover,
-        },
-      ];
-    })
-    const classes = computed(() => {
-      const collect = [...imageClasses.value];
-      const { background } = props;
-
-      if (background.color != null) {
-        collect.push('bg-' + background.color);
-      }
-      if (background.blend != null) {
-        collect.push('bg-blend-' + background.blend);
+  setup({ background }) {
+    const classes = computed(() => []);
+    const styles = computed(() => {
+      const collect = [];
+      if (background) {
+        const isUrl = background.startsWith('http');
+        collect.push({
+          backgroundImage: `url(${isUrl ? background : require(`~/assets/images/${background}`)}`
+        });
       }
       return collect;
-    });
-    return { classes };
+    })
+    return { classes, styles };
   },
 });
 </script>

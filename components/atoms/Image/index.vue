@@ -8,14 +8,17 @@ import { defineComponent, computed } from '@nuxtjs/composition-api';
 export default defineComponent({
   name: 'z-image',
   props: {
-    asset: {
+    image: {
       type: String,
       required: false
     },
   },
-  setup(props, { attrs }) {
+  setup({ image }, { attrs }) {
     const classes = computed(() => []);
-    const src = computed(() => props.asset ? require(`~/assets/images/${props.asset}`) : attrs.src);
+    const src = computed(() => {
+      const isUrl = image.startsWith('http');
+      return isUrl ? image : require(`~/assets/images/${image}`);
+    });
     return { classes, src };
   }
 });
