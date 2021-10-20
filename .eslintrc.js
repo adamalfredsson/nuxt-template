@@ -13,6 +13,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     "vue/component-definition-name-casing": ["error", "kebab-case"],
+    "vue/require-default-prop": "off",
     "import/order": "off", // does not recognize '~/' aliases as internal modules
     "unicorn/error-message": "off",
     "no-shadow": "warn",

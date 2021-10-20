@@ -1,12 +1,12 @@
-import Header from "./index.vue";
+import Footer from './index.vue';
 
 export default {
-  title: "Components/Header",
-  component: Header,
+  title: 'Components/Layout/Footer',
+  component: Footer,
 };
 
 const Template = (args, { argTypes }) => ({
-  components: { MyComponent: Header },
+  components: { MyComponent: Footer },
   props: Object.keys(argTypes),
   template: `<my-component v-bind="$props"></my-component>`,
 });

@@ -4,20 +4,6 @@ const decorationColorPlugin = require("./tailwind/decoration-color-plugin");
 
 const config = {
   separator: "_",
-  purge: {
-    options: {
-      safelist: [
-        /tw-gap/,
-        /tw-col-span/,
-        /tw-col-start/,
-        /tw-grid-cols/,
-        /tw-(pt|pb)/,
-        /tw-bg-blend/,
-        /tw-(bg|border)-(primary|secondary|gray|white|black)/,
-        /tw-order-[1-6]/,
-      ],
-    },
-  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -35,8 +21,15 @@ const config = {
       },
     },
     fontFamily: {
-      primary: ["Raleway", '"Helvetica"', '"Arial"', "sans-serif"],
-      secondary: ['"Helvetica"', '"Arial"', "sans-serif"],
+      primary: ["'Raleway'", "'Helvetica'", "'Arial'", "sans-serif"],
+      secondary: ["'Fredoka One'", "'Helvetica'", "'Arial'", "sans-serif"],
+    },
+    fontSize: {
+      sm: ["1rem", "1.6"],
+      base: ["1.25rem", "1.6"],
+      lg: ["1.625rem", "1.6"],
+      xl: ["2rem", "1.6"],
+      "2xl": ["2.5rem", "1.6"],
     },
     colors: {
       inherit: "inherit",
@@ -45,25 +38,25 @@ const config = {
       white: colors.white,
       black: colors.black,
       primary: {
-        light: colors.red["300"],
-        DEFAULT: colors.red["500"],
-        dark: colors.red["700"],
+        light: colors.sky["300"],
+        DEFAULT: colors.sky["500"],
+        dark: colors.sky["700"],
       },
       secondary: {
         light: colors.indigo["300"],
         DEFAULT: colors.indigo["500"],
         dark: colors.indigo["700"],
       },
-      gray: {
-        lighter: "#f6fafa",
-        light: colors.gray["300"],
-        DEFAULT: colors.gray["500"],
-        dark: colors.gray["700"],
-      },
       success: {
         light: colors.emerald["300"],
         DEFAULT: colors.emerald["500"],
         dark: colors.emerald["700"],
+      },
+      grayish: {
+        lighter: colors.blueGray["100"],
+        light: colors.blueGray["300"],
+        DEFAULT: colors.blueGray["500"],
+        dark: colors.blueGray["700"],
       },
       warning: {
         light: colors.yellow["300"],
@@ -77,8 +70,8 @@ const config = {
       },
       info: {
         light: colors.blue["300"],
-        DEFAULT: "#3e97b9", // colors.blue['500'],
-        dark: "#015378", // colors.blue['700'],
+        DEFAULT: colors.blue["500"],
+        dark: colors.blue["700"],
       },
     },
   },

@@ -1,13 +1,21 @@
 <template lang="pug">
-.{{ prefix }}{{ kebabCase component }}(:class="classes")
+a.z-link.whitespace-nowrap(:class="classes")
+  slot
+  span.ml-4(v-if="!noArrow")
+    | →
 </template>
 
 <script>
 import { defineComponent, computed } from '@nuxtjs/composition-api';
 
 export default defineComponent({
-  name: '{{ prefix }}{{ kebabCase component }}',
-  props: {},
+  name: 'z-link',
+  props: {
+    noArrow: {
+      type: Boolean,
+      default: false
+    },
+  },
   setup(props) {
     const classes = computed(() => []);
     return {
@@ -18,6 +26,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.{{ prefix }}{{ kebabCase component }} {
+.z-link {
 }
 </style>

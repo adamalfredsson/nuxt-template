@@ -1,12 +1,13 @@
 <template lang="pug">
-.{{ prefix }}{{ kebabCase component }}(:class="classes")
+button.z-button(:class="classes")
+  slot
 </template>
 
 <script>
 import { defineComponent, computed } from '@nuxtjs/composition-api';
 
 export default defineComponent({
-  name: '{{ prefix }}{{ kebabCase component }}',
+  name: 'z-button',
   props: {},
   setup(props) {
     const classes = computed(() => []);
@@ -18,6 +19,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.{{ prefix }}{{ kebabCase component }} {
+.z-button {
 }
 </style>

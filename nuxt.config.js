@@ -35,6 +35,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    "@nuxtjs/composition-api/module",
     "@nuxtjs/eslint-module",
     "@nuxtjs/stylelint-module",
     [
@@ -44,6 +45,15 @@ export default {
       },
     ],
     "@nuxt/postcss8",
+    [
+      "@nuxtjs/google-fonts",
+      {
+        families: {
+          "Fredoka+One": true,
+          Raleway: true,
+        },
+      },
+    ],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

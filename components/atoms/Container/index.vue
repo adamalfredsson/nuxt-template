@@ -1,23 +1,22 @@
 <template lang="pug">
-.{{ prefix }}{{ kebabCase component }}(:class="classes")
+.z-container.container(:class='classes')
+  slot
 </template>
 
 <script>
 import { defineComponent, computed } from '@nuxtjs/composition-api';
 
 export default defineComponent({
-  name: '{{ prefix }}{{ kebabCase component }}',
+  name: 'z-container',
   props: {},
-  setup(props) {
+  setup() {
     const classes = computed(() => []);
-    return {
-      classes,
-    };
+    return { classes };
   }
 });
 </script>
 
 <style lang="scss" scoped>
-.{{ prefix }}{{ kebabCase component }} {
+.z-container {
 }
 </style>
