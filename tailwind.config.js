@@ -25,11 +25,11 @@ const config = {
       secondary: ["'Fredoka One'", "'Helvetica'", "'Arial'", "sans-serif"],
     },
     fontSize: {
-      sm: ["1rem", "1.6"],
-      base: ["1.25rem", "1.6"],
-      lg: ["1.625rem", "1.6"],
-      xl: ["2rem", "1.6"],
-      "2xl": ["2.5rem", "1.6"],
+      sm: ["0.8rem", "1.6"],
+      base: ["1rem", "1.6"],
+      lg: ["1.25rem", "1.6"],
+      xl: ["1.6rem", "1.6"],
+      "2xl": ["2.25rem", "1.6"],
     },
     colors: {
       inherit: "inherit",
