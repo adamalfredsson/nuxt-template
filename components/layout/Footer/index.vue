@@ -5,7 +5,8 @@ footer.z-footer.py-8.bg-grayish-dark.text-white(:class="classes")
       h3 Stay in the loop
       z-form-field.text-black(placeholder="Enter your email")
         template(#detail)
-          z-button(type="submit") Connect
+          z-button(type="submit")
+            fa.text-lg(icon="paper-plane")
 
 </template>
 
